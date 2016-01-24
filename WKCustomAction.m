@@ -66,7 +66,7 @@
                         pt = point;
                         
                         
-                        NSString *path = [[NSBundle mainBundle] pathForResource:@"JSTools" ofType:@"js"];
+                        NSString *path = [[NSBundle mainBundle] pathForResource:@"js" ofType:@"js"];
                         NSString *jsCode = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
                         [webView evaluateJavaScript:jsCode completionHandler:nil];
                         
