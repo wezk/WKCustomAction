@@ -10,6 +10,8 @@ Add the following files to your project:
 
 on ViewDidLoad create an UIGestureReconizer and add its delegate:
 ```objective-c		
+#import "WKCustomAction.h"
+
 AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
 UILongPressGestureRecognizer *lpgr1 = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showActionSheet:)];
 lpgr.delegate = self;
