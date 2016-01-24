@@ -1,7 +1,12 @@
 # WKCustomAction
 create custom WKWebView actionsheet
 
-Example:
+How it works:
+
+Add the following files to your project:
+WKCustomAction.h
+WKCustomAction.m
+js.js
 
 on ViewDidLoad create an UIGestureReconizer and add its delegate:
 ```			
