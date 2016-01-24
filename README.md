@@ -11,12 +11,12 @@ Add the following files to your project:
 on ViewDidLoad create an UIGestureReconizer and add its delegate:
 ```objective-c		
 AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-UILongPressGestureRecognizer *lpgr1 = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(ShowActionSheet:)];
+UILongPressGestureRecognizer *lpgr1 = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showActionSheet:)];
 lpgr.delegate = self;
 lpgr.minimumPressDuration = 0.6;
 [appDelegate.window addGestureRecognizer:lpgr];
 ```  
-Then the ShowActionSheet: method:
+Then the showActionSheet: method:
 
 ```objective-c
 WKCustomAction *ac = [[WKCustomAction alloc]setupLongPressForWebView:webView];
