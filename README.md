@@ -19,6 +19,7 @@ lpgr.minimumPressDuration = 0.6;
 [appDelegate.window addGestureRecognizer:lpgr];
 ```  
 Then the showActionSheet: method:
+use "linkhref" to get the selected link and "imgsrc" to get the image
 
 ```objective-c
 WKCustomAction *ac = [[WKCustomAction alloc]setupLongPressForWebView:webView];
