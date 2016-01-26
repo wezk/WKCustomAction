@@ -46,7 +46,6 @@
                     [webView evaluateJavaScript:@"window.pageYOffset" completionHandler:^(id result4, NSError * _Nullable error) {
                         
                         CGPoint point = [sender locationInView:webView];
-                        // convert point from view to HTML coordinate system
                         CGSize viewSize = [webView frame].size;
                         CGSize windowSize = size;
                         
@@ -55,8 +54,6 @@
                             point.x = point.x * f;
                             point.y = point.y * f;
                         } else {
-                            // On iOS 4 and previous, document.elementFromPoint is not taking
-                            // offset into account, we have to handle it
                             CGPoint offset = pt;
                             point.x = point.x * f + offset.x;
                             point.y = point.y * f + offset.y;
@@ -70,7 +67,6 @@
                         NSString *jsCode = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
                         [webView evaluateJavaScript:jsCode completionHandler:nil];
                         
-                        // get the Tags at the touch location
                         __block NSString *tags;
                         __block NSString *tagsHREF;
                         __block NSString *tagsSRC;
@@ -89,11 +85,11 @@
                                     self.imgsrc = @"";
                                     
                                     
-                                    // If an image was touched, add image-related buttons.
+                                    // Get image link if available
                                     if ([tags rangeOfString:@",IMG,"].location != NSNotFound) {
                                         self.imgsrc = tagsSRC;
                                     }
-                                    // If a link is pressed add image buttons.
+                                    // Get link
                                     if ([tags rangeOfString:@",A,"].location != NSNotFound){
                                         self.linkhref = tagsHREF;
                                     }
