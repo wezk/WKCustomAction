@@ -50,18 +50,10 @@
                         CGSize windowSize = size;
                         
                         CGFloat f = windowSize.width / viewSize.width;
-                        if ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 5.) {
-                            point.x = point.x * f;
-                            point.y = point.y * f;
-                        } else {
-                            CGPoint offset = pt;
-                            point.x = point.x * f + offset.x;
-                            point.y = point.y * f + offset.y;
-                        }
-                        
-                        
+                        point.x = point.x * f;
+                        point.y = point.y * f;
+
                         pt = point;
-                        
                         
                         NSString *path = [[NSBundle mainBundle] pathForResource:@"js" ofType:@"js"];
                         NSString *jsCode = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
